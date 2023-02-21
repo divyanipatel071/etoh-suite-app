@@ -70,7 +70,6 @@ const useStyles = (theme) => ({
         fontWeight: '500',
         fontFamily: 'Expletus Sans', 
         textAlign: 'center',
-        textTransform: 'unset',
         width: '100%',
         padding: '12px 10px',
         minHeight: '56px',
@@ -240,6 +239,7 @@ const useStyles = (theme) => ({
                 },               
             },
             '& .MuiOutlinedInput-root': {
+                borderRadius: '6px',
                 '& .MuiOutlinedInput-notchedOutline': {
                     borderColor: '#94a3b8'
                 }                

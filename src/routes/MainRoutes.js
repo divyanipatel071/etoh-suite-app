@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Login from '../views/auth/Login';
 import Messagemodal from '../shared/messageModal';
+import HavingTroubleModal from '../shared/havingTroubleModal';
 export const history = createBrowserHistory(); 
 
 class MainRoutes extends Component {
@@ -17,6 +18,7 @@ class MainRoutes extends Component {
         <Routes>
           <Route exact path="/" element={<Login />} />
           <Route exact path="/message-modal" element={<Messagemodal />} />
+          <Route exact path="/having-trouble" element={<HavingTroubleModal />} />
         </Routes>
       </BrowserRouter>     
     );
