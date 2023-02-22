@@ -23,13 +23,11 @@ import { createTheme } from "@material-ui/core/styles";
 import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 
 const BREAKPOINTS = {
-    xxs: 0, 
-    xs: 300, 
+    xs: 0, 
     sm: 600, 
-    md: 900, 
-    lg: 1200, 
-    xl: 1536,
-    xxl: 1920, 
+    md: 960, 
+    lg: 1280, 
+    xl: 1920,
 };
 
 const breakpointsFull = {
@@ -53,10 +51,10 @@ const useStyles = (theme) => ({
     container: {
         '&.MuiContainer-root': {
             maxWidth: '100%',
-            padding: '0 60px',
-            // [customTheme.breakpoints.up("xl")]: {
-            //     backgroundColor: 'red',
-            // }
+            padding: '0 40px',
+            [customTheme.breakpoints.down("lg")]: {
+                padding: '0 60px',
+            }
         }        
     },
     primaryButton : {
@@ -113,6 +111,7 @@ const useStyles = (theme) => ({
         fontWeight: '500',
         transition: 'all 0.5s ease-in-out',
         textTransform: 'capitalize',
+        fontFamily: 'Expletus Sans', 
     },
     fieldRequirement: {
         marginTop: '7px',
@@ -124,6 +123,7 @@ const useStyles = (theme) => ({
             letterSpacing: '0',
             color: '#505050',
             fontWeight: '400',
+            fontFamily: 'Expletus Sans', 
         },
         '& .requirement-list': {
             padding: '0',
@@ -154,12 +154,16 @@ const useStyles = (theme) => ({
                 letterSpacing: '0',
                 color: '#000000',
                 fontWeight: '400',
+                fontFamily: 'Expletus Sans', 
             }
         }
     },
     authWrapper: {
-        padding: '60px 0 50px',
+        padding: '45px 0 50px',
         textAlign: 'left',
+        [customTheme.breakpoints.up("xl")]: {                
+            padding: '60px 0 50px',
+        },
         '& img': {
             maxWidth: '100%',
         },
@@ -175,6 +179,7 @@ const useStyles = (theme) => ({
                 '& .right-inner-content': {
                     maxWidth: '510px',
                     width: '100%',
+                    marginBottom: '20px',
                 },
                 '& .right-inner' : {
                     display: 'flex',
@@ -195,6 +200,7 @@ const useStyles = (theme) => ({
             lineHeight: '24px',
             margin: '0 0 48px',
             color: '#505050',
+            fontFamily: 'Expletus Sans', 
         },           
         '& .or-txt': {
             display: 'flex',
@@ -206,6 +212,7 @@ const useStyles = (theme) => ({
             marginBottom: '60px',
             color: '#94a3b8',
             fontWeight: '500',
+            fontFamily: 'Expletus Sans', 
             '&:before': {
                 content: '""',
                 position: 'absolute',
@@ -308,6 +315,7 @@ const useStyles = (theme) => ({
             lineHeight: '20px',
             letterSpacing: '0',
             color: '#505050',
+            fontFamily: 'Expletus Sans', 
             fontWeight: '500',
             '& .form-link': {
                 marginLeft: '10px',
@@ -329,6 +337,7 @@ const useStyles = (theme) => ({
             display: 'flex',
             alignItems: 'center',
             marginRight: '24px',
+            fontFamily: 'Expletus Sans', 
             '& .app-link': {
                 marginLeft: '12px',
                 '& img': {

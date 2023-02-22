@@ -4,6 +4,25 @@ import { withStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import images from '../../data/images'
+import { createTheme } from "@material-ui/core/styles";
+import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
+
+const BREAKPOINTS = {
+    xs: 0, 
+    sm: 600, 
+    md: 960, 
+    lg: 1280, 
+    xl: 1920,
+};
+
+const breakpointsFull = {
+    breakpoints: createBreakpoints({
+        values: BREAKPOINTS
+    })
+};
+
+const myTheme = { other: "stuff" };
+const customTheme = createTheme(myTheme, breakpointsFull);
 
 const useStyles = (theme) => ({
     authLeft: {
@@ -12,10 +31,16 @@ const useStyles = (theme) => ({
         padding: '0 15px',
         '& .auth-logo' :{
             maxWidth: '162px',
-            marginBottom: '90px',
+            marginBottom: '60px',
+            [customTheme.breakpoints.up("xl")]: {                
+                marginBottom: '90px',
+            },
         },
         '& .auth-inner': {
-            paddingTop: '129px',
+            paddingTop: '90px',
+            [customTheme.breakpoints.up("xl")]: {                
+                paddingTop: '129px',
+            },
             '& .auth-left-row': {
                 display: 'flex',
                 alignItems: 'flex-end',
@@ -44,6 +69,7 @@ const useStyles = (theme) => ({
             color: '#000000',
             fontWeight: '400',
             marginBottom: '19px',
+            fontFamily: 'Expletus Sans', 
         },
         '& .auth-name': {
             fontSize: '14px',
@@ -51,15 +77,22 @@ const useStyles = (theme) => ({
             letterSpacing: '0',            
             color: '#94a3b8',
             fontWeight: '400',
+            fontFamily: 'Expletus Sans', 
         },
         '& .auth-img': {
             margin: '61px auto 0',
             maxWidth: '380px',
-            width: '100%',
             height: '630px',
-            overflow: 'hidden',
+            width: '100%',
             position: 'relative',
-            marginBottom: '-50px',
+            '& img': {
+                height: '100%',
+                width: '100%',
+                objectFit: 'cover',
+                objectPosition: 'top',
+                position: 'relative',
+                bottom: '-50px',
+            }
         },
         '& .copyright-txt' :{
             fontSize: '12px',
