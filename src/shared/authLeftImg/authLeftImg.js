@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import "./authLeft.css";
+import "./authLeftImg.css";
 import { withStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import images from '../../data/images'
 import { createTheme } from "@material-ui/core/styles";
 import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
-import Header from '../Header';
-import AuthSlider from '../authSlider/authSlider';
 
 const BREAKPOINTS = {
     xs: 0, 
@@ -27,13 +25,22 @@ const myTheme = { other: "stuff" };
 const customTheme = createTheme(myTheme, breakpointsFull);
 
 const useStyles = (theme) => ({
-    authLeft: {
-        width: '576px',
-        maxWidth: '100%',
-        padding: '60px',
-        backgroundColor: '#fafcfe',              
+    authLeftImg: {
+        flex: '0 0 51%',
+        maxWidth: '51%',
+        padding: '0 15px',
+        '& .auth-logo' :{
+            maxWidth: '162px',
+            marginBottom: '60px',
+            [customTheme.breakpoints.up("xl")]: {                
+                marginBottom: '90px',
+            },
+        },
         '& .auth-inner': {
-            paddingTop: '37px',
+            paddingTop: '90px',
+            [customTheme.breakpoints.up("xl")]: {                
+                paddingTop: '129px',
+            },
             '& .auth-left-row': {
                 display: 'flex',
                 alignItems: 'flex-end',
@@ -86,23 +93,54 @@ const useStyles = (theme) => ({
                 position: 'relative',
                 bottom: '-50px',
             }
-        },                  
-    },       
+        },
+        '& .copyright-txt' :{
+            fontSize: '12px',
+            letterSpacing: '0',
+            color: '#94a3b8',
+            fontWeight: '400',
+            fontFamily: 'Expletus Sans', 
+            textAlign: 'right',
+            '& span': {
+                color: '#2b2b2b',
+            }
+        }          
+    },
 });
 
 
-class authLeft extends Component {       
+class authLeftImg extends Component {    
     render() {  
-        const { classes } = this.props;             
+        const { classes } = this.props;         
         return (
-            <Box className={classes.authLeft}>  
-                <Header></Header>    
-                <Box className='auth-inner'>                  
-                    <AuthSlider></AuthSlider>                                                     
+            <Box className={classes.authLeftImg}>
+                <Box className='auth-logo'>
+                    <img src={images.logo} alt="logo" />
+                </Box>
+                <Box className='auth-inner'>
+                    <Box className='auth-left-row'>
+                        <Box className='col col-left'>
+                           <Box className='auth-desc'>
+                                “Manage your company from your pocket”
+                            </Box>
+                            <Box className='auth-name'>
+                                - Audrey Chaillet
+                            </Box>
+                            <Box className='auth-img'>
+                                <img src={images.imageIphone} alt="imageIphone" />
+                            </Box>
+                        </Box>
+                        <Box className='col col-right'>
+                            <Typography className='copyright-txt'>
+                                ©Copyright <Box component='span'>EtOH 2023</Box>
+                            </Typography>
+                        </Box>
+                    </Box>
+                                        
                 </Box>
             </Box>
         );
     }
 }
 
-export default withStyles(useStyles)(authLeft);
+export default withStyles(useStyles)(authLeftImg);

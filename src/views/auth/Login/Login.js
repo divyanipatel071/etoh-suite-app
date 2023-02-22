@@ -21,6 +21,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
 import { createTheme } from "@material-ui/core/styles";
 import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
+import Footer from '../../../shared/Footer/Footer';
 
 const BREAKPOINTS = {
     xs: 0, 
@@ -47,15 +48,6 @@ const useStyles = (theme) => ({
             socialButton: {
             },
         },
-    },
-    container: {
-        '&.MuiContainer-root': {
-            maxWidth: '100%',
-            padding: '0 40px',
-            [customTheme.breakpoints.down("lg")]: {
-                padding: '0 60px',
-            }
-        }        
     },
     primaryButton : {
         background: '#4ba3b7',
@@ -158,33 +150,132 @@ const useStyles = (theme) => ({
             }
         }
     },
-    authWrapper: {
-        padding: '45px 0 50px',
-        textAlign: 'left',
-        [customTheme.breakpoints.up("xl")]: {                
-            padding: '60px 0 50px',
+    orTxt: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        fontSize: '16px',
+        lineHeight: '20px',
+        marginBottom: '60px',
+        color: '#94a3b8',
+        fontWeight: '500',
+        fontFamily: 'Expletus Sans', 
+        '&:before': {
+            content: '""',
+            position: 'absolute',
+            width: '100%',
+            top: '50%',
+            borderBottom: '1px solid #e8ecf2',
         },
+        '& span': {
+            position: 'relative',
+            background: '#ffffff',
+            padding: '0 10px',
+        }
+    },
+    formControl : {
+        marginBottom: '28px',
+        '& .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#e8ecf2',
+        },
+        '& .MuiFormControl-root': {
+            width: '100%',
+        },
+        '& .MuiFormLabel-root': {
+            fontSize: '14px',
+            lineHeight: '18px',
+            color: '#94a3b8',
+            letterSpacing: '0',
+            fontFamily: 'Expletus Sans', 
+            fontWeight: '500', 
+            '&.Mui-error': {
+                color: '#e86577',
+            },               
+        },
+        '& .MuiOutlinedInput-root': {
+            borderRadius: '6px',
+            '& .MuiOutlinedInput-notchedOutline': {
+                borderColor: '#94a3b8'
+            }                
+        },
+        '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#b5b5b5',
+            borderWidth: '1px',
+        },
+        '& .MuiOutlinedInput-input': {
+            color: '#000000',
+            fontFamily: 'Expletus Sans', 
+        },
+        '& .MuiInputLabel-outlined': {
+            color: '#94a3b8'
+        },
+        '& .MuiInputLabel-outlined.Mui-focused, & .MuiFormLabel-filled': {
+            fontSize: '12px',
+            lineHeight: '16px',
+            color: '#000000',
+            letterSpacing: '0',
+            fontFamily: 'Expletus Sans', 
+            fontWeight: '400',
+            '& ~.MuiOutlinedInput-root': {
+                '& .MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#000000',
+                }
+            }
+            
+        },
+        '& .MuiInputLabel-outlined.Mui-focused ': {
+            '& ~.MuiOutlinedInput-root.Mui-error': {
+                '& .MuiOutlinedInput-notchedOutline': {
+                    borderColor: '#bf3e50',
+                }
+            }
+        },
+        '& .MuiOutlinedInput-root.Mui-error': {
+            '& .visibility-icon': {
+                color: '#bf3e50',
+            },
+            '& .MuiOutlinedInput-notchedOutline': {
+                borderColor: '#bf3e50',
+            },
+        },
+        '& .MuiFormLabel-filled ~.MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#bf3e50',
+        },
+        '& .visibility-icon' :{
+            color: '#94a3b8',
+        },
+        '& .MuiFormHelperText-root': {
+            fontSize: '12px',
+            letterSpacing: '0',
+            color: '#e86577',
+            fontFamily: 'Expletus Sans', 
+            fontWeight: '400',
+        },
+    },
+    authWrapper: {  
+        textAlign: 'left',             
         '& img': {
             maxWidth: '100%',
         },
         '& .auth-inner-block': {
             display: 'flex',
-            flexWrap: 'wrap',
-            margin: '0 -15px',
+            flexWrap: 'wrap',            
             '& .auth-right': {
-                flex: '0 0 49%',
-                maxWidth: '49%',
-                marginTop: '124px',
-                padding: '0 15px',
+                flex: '1',                
+                padding: '60px 60px 57px',
+                display: 'flex',
+                width: '100%',
+                flexDirection: 'column',
                 '& .right-inner-content': {
                     maxWidth: '510px',
                     width: '100%',
-                    marginBottom: '20px',
+                    margin: 'auto',
                 },
                 '& .right-inner' : {
                     display: 'flex',
                     flexDirection: 'column',
-                    height: '100%',
+                    height: '100%', 
                 }
             },
         },
@@ -193,6 +284,7 @@ const useStyles = (theme) => ({
             lineHeight: '28px',
             margin: '0 0 20px',
             color: '#000000',
+            letterSpacing: '0',
             fontFamily: 'Expletus Sans', 
         },
         '& .sub-txt': {
@@ -201,110 +293,7 @@ const useStyles = (theme) => ({
             margin: '0 0 48px',
             color: '#505050',
             fontFamily: 'Expletus Sans', 
-        },           
-        '& .or-txt': {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            position: 'relative',
-            fontSize: '16px',
-            lineHeight: '20px',
-            marginBottom: '60px',
-            color: '#94a3b8',
-            fontWeight: '500',
-            fontFamily: 'Expletus Sans', 
-            '&:before': {
-                content: '""',
-                position: 'absolute',
-                width: '100%',
-                top: '50%',
-                borderBottom: '1px solid #e8ecf2',
-            },
-            '& span': {
-                position: 'relative',
-                background: '#ffffff',
-                padding: '0 10px',
-            }
-        },
-        '& .form-control' : {
-            marginBottom: '28px',
-            '& .MuiOutlinedInput-notchedOutline': {
-                borderColor: '#e8ecf2',
-            },
-            '& .MuiFormControl-root': {
-                width: '100%',
-            },
-            '& .MuiFormLabel-root': {
-                fontSize: '14px',
-                lineHeight: '18px',
-                color: '#94a3b8',
-                letterSpacing: '0',
-                fontFamily: 'Expletus Sans', 
-                fontWeight: '500', 
-                '&.Mui-error': {
-                    color: '#e86577',
-                },               
-            },
-            '& .MuiOutlinedInput-root': {
-                borderRadius: '6px',
-                '& .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#94a3b8'
-                }                
-            },
-            '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                borderColor: '#b5b5b5',
-                borderWidth: '1px',
-            },
-            '& .MuiOutlinedInput-input': {
-                color: '#000000',
-                fontFamily: 'Expletus Sans', 
-            },
-            '& .MuiInputLabel-outlined': {
-                color: '#94a3b8'
-            },
-            '& .MuiInputLabel-outlined.Mui-focused, & .MuiFormLabel-filled': {
-                fontSize: '12px',
-                lineHeight: '16px',
-                color: '#000000',
-                letterSpacing: '0',
-                fontFamily: 'Expletus Sans', 
-                fontWeight: '400',
-                '& ~.MuiOutlinedInput-root': {
-                    '& .MuiOutlinedInput-notchedOutline': {
-                        borderColor: '#000000',
-                    }
-                }
-                
-            },
-            '& .MuiInputLabel-outlined.Mui-focused ': {
-                '& ~.MuiOutlinedInput-root.Mui-error': {
-                    '& .MuiOutlinedInput-notchedOutline': {
-                        borderColor: '#bf3e50',
-                    }
-                }
-            },
-            '& .MuiOutlinedInput-root.Mui-error': {
-                '& .visibility-icon': {
-                    color: '#bf3e50',
-                },
-                '& .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#bf3e50',
-                },
-            },
-            '& .MuiFormLabel-filled ~.MuiOutlinedInput-root.Mui-error .MuiOutlinedInput-notchedOutline': {
-                borderColor: '#bf3e50',
-            },
-            '& .visibility-icon' :{
-                color: '#94a3b8',
-            },
-            '& .MuiFormHelperText-root': {
-                fontSize: '12px',
-                letterSpacing: '0',
-                color: '#e86577',
-                fontFamily: 'Expletus Sans', 
-                fontWeight: '400',
-            },
-        },
+        },                          
         '& .page-link': {
             textAlign: 'right',
             marginBottom: '95px',
@@ -320,56 +309,8 @@ const useStyles = (theme) => ({
             '& .form-link': {
                 marginLeft: '10px',
             }
-        },
-        '& .right-bottom': {
-            display: 'flex',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            justifyContent: 'flex-end',
-            marginTop: 'auto',
-        },
-        '& .downlaod-app': {
-            fontSize: '12px',
-            lineHeight: '16px',
-            letterSpacing: '0',
-            color: '#2b2b2b',
-            fontWeight: '400',
-            display: 'flex',
-            alignItems: 'center',
-            marginRight: '24px',
-            fontFamily: 'Expletus Sans', 
-            '& .app-link': {
-                marginLeft: '12px',
-                '& img': {
-                    width: '15px',
-                }
-            }
-        },
-        '& .translate-language': {
-            display: 'flex',
-            alignItems: 'center',
-            '& .translate-icon': {
-                width: '17px',
-                marginRight: '3px',
-            },
-            '& .translate-control': {
-                '& .MuiSelect-select' :{
-                    fontSize: '12px',
-                    letterSpacing: '0',
-                    color: '#2b2b2b',
-                    fontWeight: '400',
-                    fontFamily: 'Expletus Sans', 
-                    paddingBottom: '0',
-                    paddingTop: '0',
-                },
-                '& .MuiInput-underline:before': {
-                    display: 'none',
-                },
-                '& .MuiInput-underline:after': {
-                    display: 'none',
-                }
-            }
-        }
+        },        
+        
     },
 });
 
@@ -377,124 +318,99 @@ class Login extends Component {
     render() {    
         const { classes } = this.props;   
         return (
-            <Box className={classes.authWrapper}>
-                <Container className={classes.container}>
+            <Box className={classes.authWrapper}>                                 
                 <Box className='auth-inner-block'>
-                        <AuthLeft></AuthLeft>
-                        <Box className='auth-right'>
-                            <Box className='right-inner'>
-                                <Box className='right-inner-content'>
-                                    <Typography className='heading' variant='h1'>Sign Up</Typography>
-                                    <Box component='p' className='sub-txt'>Continue with Google or enter your details</Box>
-                                    <Button 
-                                        title='Login with Google'
-                                        className={classes.socialButton}
-                                        startIcon={<img src={images.goggle} alt='goggle' />}
-                                    >
-                                        Login with Google
-                                    </Button>
-                                    <Box className='or-txt'>
-                                        <Box component='span'>Or</Box>
-                                    </Box>
-                                    <Box
-                                        component='form'
-                                        noValidate
-                                        autoComplete='off'
-                                    >
-                                        <Box className='form-control'>
-                                            <TextField 
-                                                // error
-                                                label='Email' 
-                                                variant='outlined' 
-                                                // helperText="Invalid email"
-                                            />
-                                        </Box>
-                                        <Box className='form-control'>
-                                            <TextField
-                                                error
-                                                label='Password'                                   
-                                                variant='outlined'
-                                                InputProps={{
-                                                    endAdornment: (
-                                                        <InputAdornment position='end'>
-                                                            <VisibilityIcon className='visibility-icon' />
-                                                        </InputAdornment>
-                                                    ),
-                                                }}
-                                                helperText="Password does not meet requirements"
-                                            />
-                                            <Box className={classes.fieldRequirement}>
-                                                <Box className='requirement-title'>Must Contain</Box>
-                                                <List className="requirement-list">
-                                                    <ListItem className='list-item'>
-                                                        <Box className='list-icon'>                                                            
-                                                            <ClearIcon className='clear-icon' />
-                                                        </Box>
-                                                        At least one capital letter
-                                                    </ListItem>
-                                                    <ListItem className='list-item'>
-                                                        <Box className='list-icon'>
-                                                            <CheckIcon className='check-icon' />
-                                                        </Box>
-                                                        At least one lowercase letter
-                                                    </ListItem>
-                                                    <ListItem className='list-item'>
-                                                        <Box className='list-icon'>
-                                                            <CircleOutlinedIcon className='circle-icon' />
-                                                        </Box>
-                                                        At least one number
-                                                    </ListItem>
-                                                    <ListItem className='list-item'>
-                                                        <Box className='list-icon'>
-                                                            <CircleOutlinedIcon className='circle-icon' />
-                                                        </Box>
-                                                        Minimum character length is 8 characters
-                                                    </ListItem>
-                                                </List>
-                                            </Box>                                            
-                                        </Box>
-                                        <Box className='page-link'>
-                                            <Link title='Forgot Password?' href='#' className={classes.formLink}>
-                                                Forgot Password?
-                                            </Link>   
-                                        </Box>
-                                        <Button className={classes.primaryButton}>Create account</Button>     
-                                        <Box className='bottom-link'>
-                                            Already have an account? 
-                                            <Link title='Login' href='#' className={`form-link ${classes.formLink}`}>
-                                                Login
-                                            </Link>  
-                                        </Box>                         
-                                    </Box>
+                    <AuthLeft></AuthLeft>
+                    <Box className='auth-right'>
+                        <Box className='right-inner'>
+                            <Box className='right-inner-content'>
+                                <Typography className='heading' variant='h1'>Sign Up</Typography>
+                                <Box component='p' className='sub-txt'>Continue with Google or enter your details</Box>
+                                <Button 
+                                    title='Login with Google'
+                                    className={classes.socialButton}
+                                    startIcon={<img src={images.goggle} alt='goggle' />}
+                                >
+                                    Login with Google
+                                </Button>
+                                <Box className={classes.orTxt}>
+                                    <Box component='span'>Or</Box>
                                 </Box>
-                                <Box className='right-bottom'>
-                                    <Box className='downlaod-app'>
-                                        Download App
-                                        <Link href='#' className='app-link'>
-                                            <img src={images.appIcon1} alt='app-icon' />
-                                        </Link> 
-                                        <Link href='#' className='app-link'>
-                                            <img src={images.appIcon2} alt='app-icon' />
-                                        </Link> 
+                                <Box
+                                    component='form'
+                                    noValidate
+                                    autoComplete='off'
+                                >
+                                    <Box className={classes.formControl}>
+                                        <TextField 
+                                            // error
+                                            label='Email' 
+                                            variant='outlined' 
+                                            // helperText="Invalid email"
+                                        />
                                     </Box>
-                                    <Box className='translate-language'>
-                                        <Box component='span' className='translate-icon'>
-                                            <img src={images.translate} alt='translate' />
-                                        </Box>
-                                        <FormControl className='translate-control'>
-                                            <Select
-                                                className={classes.selectEmpty}
-                                            >
-                                                <MenuItem value={10}>English</MenuItem>
-                                                <MenuItem value={20}>Arabic</MenuItem>
-                                            </Select>
-                                        </FormControl>
+                                    <Box className={classes.formControl}>
+                                        <TextField
+                                            error
+                                            label='Password'                                   
+                                            variant='outlined'
+                                            InputProps={{
+                                                endAdornment: (
+                                                    <InputAdornment position='end'>
+                                                        <VisibilityIcon className='visibility-icon' />
+                                                    </InputAdornment>
+                                                ),
+                                            }}
+                                            helperText="Password does not meet requirements"
+                                        />
+                                        <Box className={classes.fieldRequirement}>
+                                            <Box className='requirement-title'>Must Contain</Box>
+                                            <List className="requirement-list">
+                                                <ListItem className='list-item'>
+                                                    <Box className='list-icon'>                                                            
+                                                        <ClearIcon className='clear-icon' />
+                                                    </Box>
+                                                    At least one capital letter
+                                                </ListItem>
+                                                <ListItem className='list-item'>
+                                                    <Box className='list-icon'>
+                                                        <CheckIcon className='check-icon' />
+                                                    </Box>
+                                                    At least one lowercase letter
+                                                </ListItem>
+                                                <ListItem className='list-item'>
+                                                    <Box className='list-icon'>
+                                                        <CircleOutlinedIcon className='circle-icon' />
+                                                    </Box>
+                                                    At least one number
+                                                </ListItem>
+                                                <ListItem className='list-item'>
+                                                    <Box className='list-icon'>
+                                                        <CircleOutlinedIcon className='circle-icon' />
+                                                    </Box>
+                                                    Minimum character length is 8 characters
+                                                </ListItem>
+                                            </List>
+                                        </Box>                                            
                                     </Box>
+                                    <Box className='page-link'>
+                                        <Link title='Forgot Password?' href='#' className={classes.formLink}>
+                                            Forgot Password?
+                                        </Link>   
+                                    </Box>
+                                    <Button className={classes.primaryButton}>Create account</Button>     
+                                    <Box className='bottom-link'>
+                                        Already have an account? 
+                                        <Link title='Login' href='#' className={`form-link ${classes.formLink}`}>
+                                            Login
+                                        </Link>  
+                                    </Box>                         
                                 </Box>
                             </Box>
+                            <Footer></Footer>                           
                         </Box>
                     </Box>
-                </Container>
+                </Box>               
             </Box>            
 
         );
