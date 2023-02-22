@@ -65,6 +65,9 @@ const useStyles = (theme) => ({
             zIndex: 10,
             '&:before' :{
                 display: 'none'
+            },
+            '&:hover, &:focus': {
+                color: '#2b2b2b',
             }
         },
         '& .slick-prev': {
