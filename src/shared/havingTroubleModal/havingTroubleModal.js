@@ -10,6 +10,25 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Link from '@material-ui/core/Link';
 import CloseIcon from '@mui/icons-material/Close';
+import { createTheme } from "@material-ui/core/styles";
+import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
+
+const BREAKPOINTS = {
+    xs: 0, 
+    sm: 600, 
+    md: 960, 
+    lg: 1280, 
+    xl: 1920,
+};
+
+const breakpointsFull = {
+    breakpoints: createBreakpoints({
+        values: BREAKPOINTS
+    })
+};
+
+const myTheme = { other: "stuff" };
+const customTheme = createTheme(myTheme, breakpointsFull);
 
 
 const useStyles = (theme) => ({
@@ -99,6 +118,12 @@ const useStyles = (theme) => ({
         minHeight: '56px',
         marginBottom: '30px',
         transition: 'all 0.5s ease-in-out',
+        [customTheme.breakpoints.down("xs")] :{
+            fontSize: '16px',
+            lineHeight: '20px',
+            padding: '8px 6px',
+            minHeight: '46px',
+        },
         '&:hover': {
             background: '#4ba3b7',
             color: '#ffffff',
@@ -121,6 +146,12 @@ const useStyles = (theme) => ({
         minHeight: '56px',
         marginBottom: '30px',
         transition: 'all 0.5s ease-in-out',
+        [customTheme.breakpoints.down("sm")] :{
+            fontSize: '16px',
+            lineHeight: '20px',
+            padding: '8px 6px',
+            minHeight: '46px',
+        },
         '&:hover': {
             background: 'transparent',
             color: '#2b2b2b',

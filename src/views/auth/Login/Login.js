@@ -66,6 +66,12 @@ const useStyles = (theme) => ({
         marginBottom: '30px',
         transition: 'all 0.5s ease-in-out',
         textTransform: 'capitalize',
+        [customTheme.breakpoints.down("xs")] :{
+            fontSize: '16px',
+            lineHeight: '20px',
+            padding: '8px 6px',
+            minHeight: '46px',
+        },
         '&:hover': {
             background: '#4ba3b7',
             color: '#ffffff',
@@ -86,6 +92,13 @@ const useStyles = (theme) => ({
         minHeight: '56px',
         fontFamily: 'Expletus Sans', 
         transition: 'all 0.5s ease-in-out',
+        [customTheme.breakpoints.down("md")] :{
+            marginBottom: '30px',
+        }, 
+        [customTheme.breakpoints.down("xs")] :{
+            minHeight: '46px',
+            padding: '8px 6px',
+        }, 
         '&:hover': {
             background: 'transparent',
         },
@@ -93,6 +106,11 @@ const useStyles = (theme) => ({
             width: '26px',
             height: '26px',
             marginRight: '29px',
+            [customTheme.breakpoints.down("md")] :{
+                width: '20px',
+                height: '20px',
+                marginRight: '15px',
+            }, 
         }
     }, 
     formLink : {
@@ -108,6 +126,9 @@ const useStyles = (theme) => ({
     fieldRequirement: {
         marginTop: '7px',
         marginBottom: '40px',
+        [customTheme.breakpoints.down("md")] :{
+            marginBottom: '28px',
+        }, 
         '& .requirement-title': {
             fontSize: '12px',
             lineHeight: '16px',
@@ -147,6 +168,9 @@ const useStyles = (theme) => ({
                 color: '#000000',
                 fontWeight: '400',
                 fontFamily: 'Expletus Sans', 
+                [customTheme.breakpoints.down("xs")] :{
+                    width: '100%',
+                },
             }
         }
     },
@@ -161,6 +185,14 @@ const useStyles = (theme) => ({
         color: '#94a3b8',
         fontWeight: '500',
         fontFamily: 'Expletus Sans', 
+        [customTheme.breakpoints.down("md")] :{
+            marginBottom: '40px',
+        }, 
+        [customTheme.breakpoints.down("xs")] :{
+            fontSize: '14px',
+            lineHeight: '18px',
+            marginBottom: '30px',
+        }, 
         '&:before': {
             content: '""',
             position: 'absolute',
@@ -267,10 +299,19 @@ const useStyles = (theme) => ({
                 display: 'flex',
                 width: '100%',
                 flexDirection: 'column',
+                [customTheme.breakpoints.down("md")] :{
+                    padding: '40px 40px 37px',
+                },
+                [customTheme.breakpoints.down("sm")] :{
+                    padding: '25px 25px 30px',                    
+                },
                 '& .right-inner-content': {
                     maxWidth: '510px',
                     width: '100%',
                     margin: 'auto',
+                    [customTheme.breakpoints.down("md")] :{
+                        maxWidth: '400px',
+                    },
                 },
                 '& .right-inner' : {
                     display: 'flex',
@@ -286,6 +327,16 @@ const useStyles = (theme) => ({
             color: '#000000',
             letterSpacing: '0',
             fontFamily: 'Expletus Sans', 
+            [customTheme.breakpoints.down("md")] :{
+                fontSize: '20px',
+                lineHeight: '24px',
+                margin: '0 0 15px',
+            }, 
+            [customTheme.breakpoints.down("sm")] :{
+                fontSize: '18px',
+                lineHeight: '24px',
+                margin: '0 0 10px',
+            }, 
         },
         '& .sub-txt': {
             fontSize: '14px',
@@ -293,10 +344,19 @@ const useStyles = (theme) => ({
             margin: '0 0 48px',
             color: '#505050',
             fontFamily: 'Expletus Sans', 
+            [customTheme.breakpoints.down("md")] :{
+                margin: '0 0 30px',
+            }, 
         },                          
         '& .page-link': {
             textAlign: 'right',
             marginBottom: '95px',
+            [customTheme.breakpoints.down("md")] :{
+                marginBottom: '60px',
+            },
+            [customTheme.breakpoints.down("xs")] :{
+                marginBottom: '40px',
+            },
         },
         '& .bottom-link': {
             textAlign: 'center',

@@ -37,11 +37,20 @@ const useStyles = (theme) => ({
         flexWrap: 'wrap',
         justifyContent: 'space-between',
         marginTop: '20px',
+        [customTheme.breakpoints.down("sm")] :{
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+        },
         '& .bottom-right':{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             marginLeft: '15px',
+            [customTheme.breakpoints.down("sm")] :{
+                marginTop: '15px',
+                marginLeft: 0,
+                width: '100%'
+            },
         },
         '& .copyright-txt' :{
             fontSize: '12px',
@@ -63,9 +72,15 @@ const useStyles = (theme) => ({
             display: 'flex',
             alignItems: 'center',
             marginRight: '24px',
-            fontFamily: 'Expletus Sans', 
+            fontFamily: 'Expletus Sans',   
+            [customTheme.breakpoints.down("xs")] :{
+                marginRight: '15px',
+            },          
             '& .app-link': {
                 marginLeft: '12px',
+                [customTheme.breakpoints.down("xs")] :{
+                    marginLeft: '8px',
+                },
                 '& img': {
                     width: '15px',
                 }

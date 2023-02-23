@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./Header.css";
+import "./primaryButton.css";
 import { withStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import images from '../../data/images'
@@ -26,7 +26,7 @@ const myTheme = { other: "stuff" };
 const customTheme = createTheme(myTheme, breakpointsFull);
 
 const useStyles = (theme) => ({
-    HeaderWrapper : {
+    primaryButtonWrapper : {
         marginBottom: '90px',
         [customTheme.breakpoints.down("md")] :{
             marginBottom: '60px',
@@ -48,11 +48,11 @@ const useStyles = (theme) => ({
 });
 
 
-class Header extends Component {       
+class primaryButton extends Component {       
     render() {  
         const { classes } = this.props;  
         return (
-            <Box className={classes.HeaderWrapper}>
+            <Box className={classes.primaryButtonWrapper}>
                 <Box className='auth-logo'>
                     <img src={images.logo} alt="logo" />
                 </Box>                                      
@@ -61,4 +61,4 @@ class Header extends Component {
     }
 }
 
-export default withStyles(useStyles)(Header);
+export default withStyles(useStyles)(primaryButton);

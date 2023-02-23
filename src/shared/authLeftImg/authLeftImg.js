@@ -29,19 +29,9 @@ const useStyles = (theme) => ({
         flex: '0 0 51%',
         maxWidth: '51%',
         padding: '0 15px',
-        '& .auth-logo' :{
-            maxWidth: '162px',
-            marginBottom: '60px',
-            [customTheme.breakpoints.up("xl")]: {                
-                marginBottom: '90px',
-            },
-        },
         '& .auth-inner': {
-            paddingTop: '90px',
-            [customTheme.breakpoints.up("xl")]: {                
-                paddingTop: '129px',
-            },
-            '& .auth-left-row': {
+            paddingTop: '37px',
+           '& .auth-left-row': {
                 display: 'flex',
                 alignItems: 'flex-end',
                 flexWrap: 'wrap',

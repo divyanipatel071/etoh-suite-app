@@ -33,6 +33,9 @@ const useStyles = (theme) => ({
     carouselWrapper: {
         maxWidth: '456px',
         width: '100%',
+        [customTheme.breakpoints.down("sm")] :{
+            margin: '0 auto',
+        },
         '& .slider-bottom':{
             marginRight: '80px',
         },
@@ -43,6 +46,20 @@ const useStyles = (theme) => ({
             fontFamily: 'Expletus Sans', 
             fontWeight: '400',
             marginBottom: '20px',
+            [customTheme.breakpoints.down("md")] :{
+                fontSize: '20px',
+                lineHeight: '28px',
+                marginBottom: '15px',
+            }, 
+            [customTheme.breakpoints.down("sm")] :{
+                fontSize: '18px',
+                lineHeight: '24px',
+                marginBottom: '10px',
+            },
+            [customTheme.breakpoints.down("xs")] :{
+                fontSize: '16px',
+                lineHeight: '20px',
+            }, 
         },
         '& .slider-author': {
             fontSize: '14px',
@@ -52,9 +69,18 @@ const useStyles = (theme) => ({
             fontFamily: 'Expletus Sans', 
             fontWeight: 400,
             marginBottom: '20px',
+            [customTheme.breakpoints.down("md")] :{
+               marginBottom: '15px',
+            }, 
+            [customTheme.breakpoints.down("sm")] :{
+                marginBottom: '10px',
+            }, 
         },
         '& .slider-img':{
             marginBottom: '48px',
+            [customTheme.breakpoints.down("xs")] :{
+                marginBottom: '25px',
+            },
         },
         '& .slick-prev, & .slick-next': {
             bottom: '8px',

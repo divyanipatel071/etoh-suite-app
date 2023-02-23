@@ -31,9 +31,20 @@ const useStyles = (theme) => ({
         width: '576px',
         maxWidth: '100%',
         padding: '60px',
+        [customTheme.breakpoints.down("md")] :{
+            width: '470px',
+            padding: '40px',
+        },
+        [customTheme.breakpoints.down("sm")] :{
+            width: '100%',
+            padding: '25px',
+        },
         backgroundColor: '#fafcfe',              
         '& .auth-inner': {
             paddingTop: '37px',
+            [customTheme.breakpoints.down("sm")] :{
+                paddingTop: '21px',
+            },
             '& .auth-left-row': {
                 display: 'flex',
                 alignItems: 'flex-end',
@@ -49,10 +60,7 @@ const useStyles = (theme) => ({
                 '& .col-right': {
                     flex: '0 0 46%',
                     maxWidth: '46%',
-                    paddingRight: '206px',
-                    "@media (max-width: 1536px)": {
-                        paddingRight: '95px',
-                    },
+                    paddingRight: '206px',                    
                 }
             }
         },
