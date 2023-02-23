@@ -27,22 +27,22 @@ const customTheme = createTheme(myTheme, breakpointsFull);
 
 const useStyles = (theme) => ({
     HeaderWrapper : {
-        marginBottom: '90px',
+        padding: '60px',
         [customTheme.breakpoints.down("md")] :{
-            marginBottom: '60px',
+            padding: '40px',
         },
         [customTheme.breakpoints.down("sm")] :{
-            marginBottom: '35px',
-        },
-        [customTheme.breakpoints.down("xs")] :{
-            marginBottom: '20px',
-        },
+            padding: '25px',
+        },          
         '& .auth-logo' :{
             maxWidth: '162px',   
             width: '100%',  
             [customTheme.breakpoints.down("md")] :{
                 maxWidth: '142px',   
-            },       
+            },    
+            '& img': {
+                maxWidth: '100%',   
+            }   
         },
     },
 });
@@ -52,7 +52,7 @@ class Header extends Component {
     render() {  
         const { classes } = this.props;  
         return (
-            <Box className={classes.HeaderWrapper}>
+            <Box className={`header-wrapper ${classes.HeaderWrapper}`}>
                 <Box className='auth-logo'>
                     <img src={images.logo} alt="logo" />
                 </Box>                                      

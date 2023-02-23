@@ -5,14 +5,10 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
-import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
-import Select from '@material-ui/core/Select';
-import MenuItem from '@material-ui/core/MenuItem';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import images from '../../../data/images';
-import Container from '@mui/material/Container';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
@@ -22,6 +18,7 @@ import ClearIcon from '@mui/icons-material/Clear';
 import { createTheme } from "@material-ui/core/styles";
 import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 import Footer from '../../../shared/Footer/Footer';
+import Header from '../../../shared/Header';
 
 const BREAKPOINTS = {
     xs: 0, 
@@ -295,12 +292,12 @@ const useStyles = (theme) => ({
             flexWrap: 'wrap',            
             '& .auth-right': {
                 flex: '1',                
-                padding: '60px 60px 57px',
+                padding: '42px 60px 142px',
                 display: 'flex',
                 width: '100%',
                 flexDirection: 'column',
                 [customTheme.breakpoints.down("md")] :{
-                    padding: '40px 40px 37px',
+                    padding: '40px 40px 102px',
                 },
                 [customTheme.breakpoints.down("sm")] :{
                     padding: '25px 25px 30px',                    
@@ -369,110 +366,144 @@ const useStyles = (theme) => ({
             '& .form-link': {
                 marginLeft: '10px',
             }
-        },        
-        
+        },                
     },
+    wrapper: {
+        minHeight: '100vh',
+        paddingBottom: '142px',
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    authMainWrapper: {
+        '& .wrapper' :{
+            paddingBottom: '0',
+        },
+        '& .header-wrapper' :{
+            display: 'none',
+        },
+        '& .footer-wrapper': {
+            marginLeft: '576px',
+            [customTheme.breakpoints.down("md")] :{
+                marginLeft: '470px',
+            },
+            [customTheme.breakpoints.down("sm")] :{
+                marginLeft: '0',
+            },
+        }
+    },
+    innerWrapper: {
+        margin: 'auto',
+        width: '100%',
+    }
 });
 
 class Login extends Component {    
     render() {    
         const { classes } = this.props;   
         return (
-            <Box className={classes.authWrapper}>                                 
-                <Box className='auth-inner-block'>
-                    <AuthLeft></AuthLeft>
-                    <Box className='auth-right'>
-                        <Box className='right-inner'>
-                            <Box className='right-inner-content'>
-                                <Typography className='heading' variant='h1'>Sign Up</Typography>
-                                <Box component='p' className='sub-txt'>Continue with Google or enter your details</Box>
-                                <Button 
-                                    title='Login with Google'
-                                    className={classes.socialButton}
-                                    startIcon={<img src={images.goggle} alt='goggle' />}
-                                >
-                                    Login with Google
-                                </Button>
-                                <Box className={classes.orTxt}>
-                                    <Box component='span'>Or</Box>
-                                </Box>
-                                <Box
-                                    component='form'
-                                    noValidate
-                                    autoComplete='off'
-                                >
-                                    <Box className={classes.formControl}>
-                                        <TextField 
-                                            // error
-                                            label='Email' 
-                                            variant='outlined' 
-                                            // helperText="Invalid email"
-                                        />
+            <>
+                <Box className={`${classes.authMainWrapper} ${classes.mainWrapper}`}>
+                    <Box className={`wrapper ${classes.wrapper}`}>
+                        <Header></Header>
+                        <Box className={classes.innerWrapper}>
+                            <Box className={classes.authWrapper}>                                 
+                                <Box className='auth-inner-block'>
+                                    <AuthLeft></AuthLeft>
+                                    <Box className='auth-right'>
+                                        <Box className='right-inner'>
+                                            <Box className='right-inner-content'>
+                                                <Typography className='heading' variant='h1'>Sign Up</Typography>
+                                                <Box component='p' className='sub-txt'>Continue with Google or enter your details</Box>
+                                                <Button 
+                                                    title='Login with Google'
+                                                    className={classes.socialButton}
+                                                    startIcon={<img src={images.goggle} alt='goggle' />}
+                                                >
+                                                    Login with Google
+                                                </Button>
+                                                <Box className={classes.orTxt}>
+                                                    <Box component='span'>Or</Box>
+                                                </Box>
+                                                <Box
+                                                    component='form'
+                                                    noValidate
+                                                    autoComplete='off'
+                                                >
+                                                    <Box className={classes.formControl}>
+                                                        <TextField 
+                                                            // error
+                                                            label='Email' 
+                                                            variant='outlined' 
+                                                            // helperText="Invalid email"
+                                                        />
+                                                    </Box>
+                                                    <Box className={classes.formControl}>
+                                                        <TextField
+                                                            error
+                                                            label='Password'                                   
+                                                            variant='outlined'
+                                                            InputProps={{
+                                                                endAdornment: (
+                                                                    <InputAdornment position='end'>
+                                                                        <VisibilityIcon className='visibility-icon' />
+                                                                    </InputAdornment>
+                                                                ),
+                                                            }}
+                                                            helperText="Password does not meet requirements"
+                                                        />
+                                                        <Box className={classes.fieldRequirement}>
+                                                            <Box className='requirement-title'>Must Contain</Box>
+                                                            <List className="requirement-list">
+                                                                <ListItem className='list-item'>
+                                                                    <Box className='list-icon'>                                                            
+                                                                        <ClearIcon className='clear-icon' />
+                                                                    </Box>
+                                                                    At least one capital letter
+                                                                </ListItem>
+                                                                <ListItem className='list-item'>
+                                                                    <Box className='list-icon'>
+                                                                        <CheckIcon className='check-icon' />
+                                                                    </Box>
+                                                                    At least one lowercase letter
+                                                                </ListItem>
+                                                                <ListItem className='list-item'>
+                                                                    <Box className='list-icon'>
+                                                                        <CircleOutlinedIcon className='circle-icon' />
+                                                                    </Box>
+                                                                    At least one number
+                                                                </ListItem>
+                                                                <ListItem className='list-item'>
+                                                                    <Box className='list-icon'>
+                                                                        <CircleOutlinedIcon className='circle-icon' />
+                                                                    </Box>
+                                                                    Minimum character length is 8 characters
+                                                                </ListItem>
+                                                            </List>
+                                                        </Box>                                            
+                                                    </Box>
+                                                    <Box className='page-link'>
+                                                        <Link title='Forgot Password?' href='#' className={classes.formLink}>
+                                                            Forgot Password?
+                                                        </Link>   
+                                                    </Box>
+                                                    <Button className={classes.primaryButton}>Create account</Button>     
+                                                    <Box className='bottom-link'>
+                                                        Already have an account? 
+                                                        <Link title='Login' href='#' className={`form-link ${classes.formLink}`}>
+                                                            Login
+                                                        </Link>  
+                                                    </Box>                         
+                                                </Box>
+                                            </Box>                        
+                                        </Box>
                                     </Box>
-                                    <Box className={classes.formControl}>
-                                        <TextField
-                                            error
-                                            label='Password'                                   
-                                            variant='outlined'
-                                            InputProps={{
-                                                endAdornment: (
-                                                    <InputAdornment position='end'>
-                                                        <VisibilityIcon className='visibility-icon' />
-                                                    </InputAdornment>
-                                                ),
-                                            }}
-                                            helperText="Password does not meet requirements"
-                                        />
-                                        <Box className={classes.fieldRequirement}>
-                                            <Box className='requirement-title'>Must Contain</Box>
-                                            <List className="requirement-list">
-                                                <ListItem className='list-item'>
-                                                    <Box className='list-icon'>                                                            
-                                                        <ClearIcon className='clear-icon' />
-                                                    </Box>
-                                                    At least one capital letter
-                                                </ListItem>
-                                                <ListItem className='list-item'>
-                                                    <Box className='list-icon'>
-                                                        <CheckIcon className='check-icon' />
-                                                    </Box>
-                                                    At least one lowercase letter
-                                                </ListItem>
-                                                <ListItem className='list-item'>
-                                                    <Box className='list-icon'>
-                                                        <CircleOutlinedIcon className='circle-icon' />
-                                                    </Box>
-                                                    At least one number
-                                                </ListItem>
-                                                <ListItem className='list-item'>
-                                                    <Box className='list-icon'>
-                                                        <CircleOutlinedIcon className='circle-icon' />
-                                                    </Box>
-                                                    Minimum character length is 8 characters
-                                                </ListItem>
-                                            </List>
-                                        </Box>                                            
-                                    </Box>
-                                    <Box className='page-link'>
-                                        <Link title='Forgot Password?' href='#' className={classes.formLink}>
-                                            Forgot Password?
-                                        </Link>   
-                                    </Box>
-                                    <Button className={classes.primaryButton}>Create account</Button>     
-                                    <Box className='bottom-link'>
-                                        Already have an account? 
-                                        <Link title='Login' href='#' className={`form-link ${classes.formLink}`}>
-                                            Login
-                                        </Link>  
-                                    </Box>                         
-                                </Box>
-                            </Box>
-                            <Footer></Footer>                           
-                        </Box>
+                                </Box>               
+                            </Box>   
+                        </Box>    
                     </Box>
-                </Box>               
-            </Box>            
-
+                    <Footer></Footer>   
+                </Box>  
+            </>                               
         );
     }
 }

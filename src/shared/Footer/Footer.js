@@ -31,16 +31,29 @@ const myTheme = { other: "stuff" };
 const customTheme = createTheme(myTheme, breakpointsFull);
 
 const useStyles = (theme) => ({
+    authMainWrapper: {
+        background: 'red'
+    },
     FooterWrapper : {
         display: 'flex',
         alignItems: 'center',
         flexWrap: 'wrap',
         justifyContent: 'space-between',
-        marginTop: '20px',
+        padding: '60px',        
+        marginTop: '-142px',
+        [customTheme.breakpoints.down("md")] :{
+            padding: '40px',
+            marginTop: '-102px',
+        },
         [customTheme.breakpoints.down("sm")] :{
+            padding: '25px',
             flexWrap: 'wrap',
             justifyContent: 'center',
+            marginTop: '0',
         },
+        '& img': {
+            maxWidth: '100%',   
+        }, 
         '& .bottom-right':{
             display: 'flex',
             alignItems: 'center',
@@ -119,7 +132,7 @@ class Footer extends Component {
     render() {  
         const { classes } = this.props;  
         return (
-            <Box className={classes.FooterWrapper}>
+            <Box className={`footer-wrapper ${classes.FooterWrapper}`}>
                 <Box className='bottom-left'>
                     <Typography className='copyright-txt'>
                         ©Copyright <Box component='span'>EtOH 2023</Box>
@@ -153,5 +166,6 @@ class Footer extends Component {
         );
     }
 }
+
 
 export default withStyles(useStyles)(Footer);

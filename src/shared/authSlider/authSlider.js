@@ -68,7 +68,7 @@ const useStyles = (theme) => ({
             color: '#94a3b8',
             fontFamily: 'Expletus Sans', 
             fontWeight: 400,
-            marginBottom: '20px',
+            marginBottom: '24px',
             [customTheme.breakpoints.down("md")] :{
                marginBottom: '15px',
             }, 
@@ -83,7 +83,7 @@ const useStyles = (theme) => ({
             },
         },
         '& .slick-prev, & .slick-next': {
-            bottom: '8px',
+            bottom: '4px',
             top: 'unset',
             transform: 'unset',
             background: 'transparent',
@@ -105,6 +105,12 @@ const useStyles = (theme) => ({
         },
         '& .start-icon': {
             lineHeight: 0,
+            '& .MuiSvgIcon-root': {
+                width: '20px',
+                height: '20px',
+                fontSize: '20px',
+                marginRight: '4px',
+            }
         }
     }
 });

@@ -31,6 +31,8 @@ const useStyles = (theme) => ({
         width: '576px',
         maxWidth: '100%',
         padding: '60px',
+        backgroundColor: '#fafcfe',    
+        minHeight: '100vh', 
         [customTheme.breakpoints.down("md")] :{
             width: '470px',
             padding: '40px',
@@ -38,12 +40,28 @@ const useStyles = (theme) => ({
         [customTheme.breakpoints.down("sm")] :{
             width: '100%',
             padding: '25px',
-        },
-        backgroundColor: '#fafcfe',              
+            minHeight: 'unset',
+        },    
+        '& .auth-logo' :{
+            maxWidth: '162px',   
+            width: '100%',  
+            [customTheme.breakpoints.down("md")] :{
+                maxWidth: '142px',   
+            },    
+            '& img': {
+                maxWidth: '100%',   
+            }   
+        },             
         '& .auth-inner': {
-            paddingTop: '37px',
+            paddingTop: '127px',
+            [customTheme.breakpoints.down("md")] :{
+                paddingTop: '97px',
+            },
             [customTheme.breakpoints.down("sm")] :{
-                paddingTop: '21px',
+                paddingTop: '72px',
+            },
+            [customTheme.breakpoints.down("xs")] :{
+                paddingTop: '41px',
             },
             '& .auth-left-row': {
                 display: 'flex',
@@ -103,8 +121,10 @@ class authLeft extends Component {
     render() {  
         const { classes } = this.props;             
         return (
-            <Box className={classes.authLeft}>  
-                <Header></Header>    
+            <Box className={classes.authLeft}> 
+                <Box className='auth-logo'>
+                    <img src={images.logo} alt="logo" />
+                </Box>                   
                 <Box className='auth-inner'>                  
                     <AuthSlider></AuthSlider>                                                     
                 </Box>

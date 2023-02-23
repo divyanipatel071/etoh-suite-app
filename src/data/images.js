@@ -8,6 +8,7 @@ import imageIphone from '../static/images/image-iphone.png';
 import sliderImg1 from '../static/images/slider-1.jpg';
 import sliderImg2 from '../static/images/slider-2.png';
 import sliderImg3 from '../static/images/slider-3.png';
+import passwordReset from '../static/images/password-reset.png';
 
 const images = {
   logo,
@@ -19,7 +20,8 @@ const images = {
   appIcon1,
   appIcon2,
   translate,
-  imageIphone
+  imageIphone,
+  passwordReset
 };
 
 export default images;
