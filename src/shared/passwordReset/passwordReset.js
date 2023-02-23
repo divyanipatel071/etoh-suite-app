@@ -43,13 +43,35 @@ const useStyles = (theme) => ({
             justifyContent: 'center',
             maxWidth: '954px',
             margin: '0 auto',
+            [customTheme.breakpoints.down("md")] :{
+                maxWidth: '740px',
+            },
+            [customTheme.breakpoints.down("xs")] :{
+                flexWrap: 'wrap',
+                justifyContent: 'center',
+                textAlign: 'center',
+                maxWidth: '320px',
+             },
             '& .password-reset-img': {
                 maxWidth: '456px',
                 width: '100%',
+                [customTheme.breakpoints.down("md")] :{
+                    maxWidth: '325px',
+                },
+                [customTheme.breakpoints.down("xs")] :{
+                    maxWidth: '235px',
+                },
             }
         },
         '& .password-reset-content': {
             marginLeft: '168px',
+            [customTheme.breakpoints.down("md")] :{
+                marginLeft: '100px',
+            },
+            [customTheme.breakpoints.down("xs")] :{
+                marginLeft: '0',
+                marginTop: '20px',
+            },
         },
         '& .heading': {
             fontSize: '24px',
@@ -114,6 +136,9 @@ const useStyles = (theme) => ({
         paddingBottom: '142px',
         display: 'flex',
         flexDirection: 'column',
+        [customTheme.breakpoints.down("sm")] :{
+            paddingBottom: '105px',
+        },
     },
     authMainWrapper: {
         '& .wrapper' :{

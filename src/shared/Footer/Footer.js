@@ -49,7 +49,7 @@ const useStyles = (theme) => ({
             padding: '25px',
             flexWrap: 'wrap',
             justifyContent: 'center',
-            marginTop: '0',
+            marginTop: '-105px',
         },
         '& img': {
             maxWidth: '100%',   

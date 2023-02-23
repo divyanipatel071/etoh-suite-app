@@ -300,7 +300,7 @@ const useStyles = (theme) => ({
                     padding: '40px 40px 102px',
                 },
                 [customTheme.breakpoints.down("sm")] :{
-                    padding: '25px 25px 30px',                    
+                    padding: '25px 25px 105px',                    
                 },
                 '& .right-inner-content': {
                     maxWidth: '510px',
@@ -373,6 +373,9 @@ const useStyles = (theme) => ({
         paddingBottom: '142px',
         display: 'flex',
         flexDirection: 'column',
+        [customTheme.breakpoints.down("sm")] :{
+            paddingBottom: '105px',
+        },
     },
     authMainWrapper: {
         '& .wrapper' :{
