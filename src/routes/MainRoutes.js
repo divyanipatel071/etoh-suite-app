@@ -10,6 +10,7 @@ import Messagemodal from '../shared/messageModal';
 import HavingTroubleModal from '../shared/havingTroubleModal';
 import PasswordReset from '../shared/passwordReset';
 import DownloadModal from '../shared/downloadModal';
+
 export const history = createBrowserHistory(); 
 
 class MainRoutes extends Component {

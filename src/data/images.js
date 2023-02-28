@@ -13,6 +13,7 @@ import modalImg from '../static/images/modal-img.png';
 import appStore from '../static/images/app-store.png';
 import playStore from '../static/images/play-store.png';
 
+
 const images = {
   logo,
   sliderImg1,

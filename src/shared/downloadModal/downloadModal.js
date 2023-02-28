@@ -152,6 +152,7 @@ const useStyles = (theme) => ({
             marginBottom: '34px',
             [customTheme.breakpoints.down("md")] :{
                 marginBottom: '28px',
+                
             },
         },
         '& .modal-title':{            
@@ -175,7 +176,7 @@ const useStyles = (theme) => ({
             marginBottom: '23px',
             lineHeight: '0',
             textAlign: 'center',           
-            '& img' : {               
+            '& img' : {              
                 [customTheme.breakpoints.down("md")] :{
                     width: '260px'
                 },   
