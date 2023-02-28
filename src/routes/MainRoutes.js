@@ -24,6 +24,7 @@ class MainRoutes extends Component {
           <Route exact path="/having-trouble" element={<HavingTroubleModal />} />
           <Route exact path="/password-reset" element={<PasswordReset />} />
           <Route exact path="/download-modal" element={<DownloadModal />} />
+          
         </Routes>
       </BrowserRouter>     
     );

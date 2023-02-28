@@ -126,6 +126,7 @@ const useStyles = (theme) => ({
             color: '#ffffff',
         }
     },
+
     
     // modal start
     modalDialogBox: {
