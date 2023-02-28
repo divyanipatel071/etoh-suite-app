@@ -445,6 +445,7 @@ class Login extends Component {
                                                             error
                                                             label='Password'                                   
                                                             variant='outlined'
+                                                            type="password"
                                                             InputProps={{
                                                                 endAdornment: (
                                                                     <InputAdornment position='end'>

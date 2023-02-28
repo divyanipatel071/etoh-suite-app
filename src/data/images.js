@@ -9,6 +9,9 @@ import sliderImg1 from '../static/images/slider-1.jpg';
 import sliderImg2 from '../static/images/slider-2.png';
 import sliderImg3 from '../static/images/slider-3.png';
 import passwordReset from '../static/images/password-reset.png';
+import modalImg from '../static/images/modal-img.png';
+import appStore from '../static/images/app-store.png';
+import playStore from '../static/images/play-store.png';
 
 const images = {
   logo,
@@ -21,7 +24,10 @@ const images = {
   appIcon2,
   translate,
   imageIphone,
-  passwordReset
+  passwordReset,
+  modalImg,
+  appStore,
+  playStore
 };
 
 export default images;
